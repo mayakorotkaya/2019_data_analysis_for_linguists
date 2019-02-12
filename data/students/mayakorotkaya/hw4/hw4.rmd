@@ -19,4 +19,4 @@ sd_data <- sd(df_tt01$vowel.dur)
 mean_data <- mean(df_tt01$vowel.dur)
 sd_post <- (1/sd_prior+1/sd_data)^-1
 mean_post <- weighted.mean(c(mean_prior, mean_data), c(1/sd_prior, 1/sd_data))
-data.frame(cread_int_l = qnorm(.025, mean = mean_post, sd = sd_post ), cread_int_r = qnorm(.975, mean = mean_post, sd = sd_post ))
+data.frame(cred_int_l = qnorm(.025, mean = mean_post, sd = sd_post ), cred_int_r = qnorm(.975, mean = mean_post, sd = sd_post ))
